@@ -1,12 +1,12 @@
-# 定期異地備份Docker中的Mysql資料
+# 定期異地備份Docker中的MySQL資料
 
-- 首先最重要的是備份指令
+- 首先最重要的是Docker備份MySQL指令
     
     ```bash
     docker exec $container_name mysqldump -u$db_user -p$db_password your_database_name > /tmp/db_backup.sql
     ```
     
-- 用 rclone 連線到 google drive
+- 用 rclone 連線到 Google Drive
     - rclone 簡單介紹
         
         **rclone** 是一個用於與多種不同雲端存儲提供商進行數據同步和轉移的命令行工具。它允許您管理和操作不同雲端存儲服務中的文件和數據，並且可以在本地系統和不同雲端存儲之間進行文件傳輸。
@@ -25,21 +25,21 @@
         
     1. Server 和本地都先安裝 rclone
     
-    ```bash
-    # centos 安裝指令
-    curl https://rclone.org/install.sh | bash
+         ```bash
+         # centos 安裝指令
+         curl https://rclone.org/install.sh | bash
+         
+         # MacOs 安裝指令
+         brew install reclone
+         ```
     
-    # MacOs 安裝指令
-    brew install reclone
-    ```
+    2. 開始進行設定
     
-    1. 開始進行設定
+         ```bash
+         rclone config
+         ```
     
-    ```bash
-    rclone config
-    ```
-    
-    1. 設定細項範例
+    3. 設定細項範例
         - 階段一，新增空間和命名
             
             ```bash
@@ -247,7 +247,7 @@
             
             成功賦予權限後
             
-            ![Untitled](%E5%AE%9A%E6%9C%9F%E7%95%B0%E5%9C%B0%E5%82%99%E4%BB%BDDocker%E4%B8%AD%E7%9A%84Mysql%E8%B3%87%E6%96%99%208daeebe33811407a9b1574b69e3819e5/Untitled.png)
+            ![Success Picture](../../Images/8daeebe33811407a9b1574b69e3819e5.png)
             
             然後在 terminal 就會出現 ，複製他的密鑰，然後貼回去 server。
             
@@ -390,7 +390,7 @@
         
         ```php
         # 搜尋 /home/httpd/vhosts 下的專案目錄，排除指定的資料夾
-        project_directories=($(find /var/www/vhosts/* -maxdepth 0 -type d ! -name "system" ! -name "chroot" ! -name "default" ! -name "athenabeta.com.tw"))
+        project_directories=($(find /var/www/vhosts/* -maxdepth 0 -type d ! -name "system" ! -name "chroot" ! -name "default" ! -name "xxx.com.tw"))
         # 迭代專案目錄
         for project_dir in "${project_directories[@]}"; do
             # 切換到專案目錄
