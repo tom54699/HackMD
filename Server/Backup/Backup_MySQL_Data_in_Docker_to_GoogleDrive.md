@@ -247,7 +247,7 @@
             
             成功賦予權限後
             
-            ![Success Picture](../../Images/8daeebe33811407a9b1574b69e3819e5.png)
+            ![Success Picture](https://i.imgur.com/vc9wXXl.png)
             
             然後在 terminal 就會出現 ，複製他的密鑰，然後貼回去 server。
             
