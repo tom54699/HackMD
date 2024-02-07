@@ -1,6 +1,6 @@
-# 定期異地備份Docker中的MySQL資料
+# 定期異地備份 Docker 中的 MySQL 資料至 Google Drive
 
-- 首先最重要的是Docker備份MySQL指令
+- 首先最重要的是 Docker 備份 MySQL 指令
     
     ```bash
     docker exec $container_name mysqldump -u$db_user -p$db_password your_database_name > /tmp/db_backup.sql
@@ -364,8 +364,8 @@
     echo "Temporary backup file cleaned up."
     ```
     
-- 寫排程，讓server 定時備份
-    - 因為server有很多專案，所以寫了一個主腳本來管理，以後有新專案都要把專案目錄加入陣列
+- 寫排程，讓 server 定時備份
+    - 因為 server 有很多專案，所以寫了一個主腳本來管理，以後有新專案都要把專案目錄加入陣列
     主腳本目錄：/usr/local/bin/backup/main_docker_db_backup.sh
         
         ```bash
@@ -409,16 +409,16 @@
         chmod +x /path/to/your/script.sh
         ```
         
-        要設定Linux伺服器上的排程，以定期執行您的腳本，您可以使用cron工具。Cron允許您在指定的時間和日期執行腳本或命令。以下是如何設定cron排程來執行您的腳本：
+        要設定 Linux 伺服器上的排程，以定期執行您的腳本，您可以使用 cron 工具。Cron 允許您在指定的時間和日期執行腳本或命令。以下是如何設定 cron 排程來執行您的腳本：
         
-        1. 打開終端機並使用以下命令來編輯cron排程：
+        1. 打開終端機並使用以下命令來編輯 cron 排程：
             
             ```
             crontab -e
             ```
             
-        2. 這將打開一個文本編輯器，用於編輯cron排程。如果是第一次編輯cron，您可能需要選擇文本編輯器（例如nano，vim等）。
-        3. 在文本編輯器中，添加以下行來設定cron排程，每天定時執行您的腳本。這個例子將在每天的凌晨2點執行腳本：
+        2. 這將打開一個文本編輯器，用於編輯cron排程。如果是第一次編輯 cron，您可能需要選擇文本編輯器（例如 nano，vim等）。
+        3. 在文本編輯器中，添加以下行來設定 cron 排程，每天定時執行您的腳本。這個例子將在每天的凌晨2點執行腳本：
             
             ```bash
             0 2 * * * /bin/bash /path/to/your/script.sh
@@ -449,11 +449,11 @@
         chmod +x /path/to/your/script.sh
         ```
         
-        這樣，cron將在每天的凌晨2點執行您的腳本，執行備份和上傳操作。您可以根據需求調整cron排程中的時間。
+        這樣，cron 將在每天的凌晨2點執行您的腳本，執行備份和上傳操作。您可以根據需求調整 cron 排程中的時間。
         
-    - 或是server有自帶排程設定
+    - 或是 Server 有自帶圖形化介面的排程設定
         
-        plesk 的排程在 → 工具與設定 → • 工作排程 (Cron 工作)
+        Plesk 的排程在 → 工具與設定 → 工作排程 ( Cron 工作)
         
 - 參考網站
     1. [https://www.wongwonggoods.com/all-posts/linux/linux-file/rclone-mount-google-drive/#透過終端機下載](https://www.wongwonggoods.com/all-posts/linux/linux-file/rclone-mount-google-drive/#%E9%80%8F%E9%81%8E%E7%B5%82%E7%AB%AF%E6%A9%9F%E4%B8%8B%E8%BC%89)
