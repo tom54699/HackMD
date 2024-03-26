@@ -55,14 +55,35 @@ Fail2Ban 的應用主要是要去根據需求去更改設定檔。
 fail2ban.conf 文件包含 Fail2Ban 的基本配置。通常會複製 jail.conf 的內容，然後創建一個 fail2ban.local 文件，將其用作主要的設定文件。  
 
 ---
-因為 fail2ban 有很多功能和複雜的設定，這邊今天只介紹一些簡單常用的功能：
+因為 fail2ban 有很多功能和複雜的設定，這邊今天只介紹一些簡單常用的設定：
 
-1. **監控 SSH port**  
-    在設定檔中的這一個區塊是 SSH 相關的設定
+1. **設定 IP 白名單**  
+
+    ignoreip 的值可以是多個 IP 位址、CIDR 網段、DNS 主機名稱，各 IP 之間以空白分隔。
     
     ``` bash
-    sudo ufw allow OpenSSH
+    ignoreip = 127.0.0.1/8 0.0.0.0
     ```  
+2. **設定封鎖時間**  
+
+    bantime 參數可設定每一次阻擋攻擊來源的持續時間。
+    
+    ``` bash
+    ibantime  = 7d
+    ```  
+3. **惡意攻擊判斷標準**  
+
+    findtime 參數表示一段觀察時間，而 maxretry 參數則是表示錯誤嘗試的次數。  
+    當在 fidntime所設定的時間內，達到maxretry所設定的錯誤次數時，就會被判定為惡意攻擊然後被封鎖。
+    
+    ``` bash
+    findtime  = 10m
+    maxretry = 3
+    ```  
+4. **各種預設服務**  
+
+    預設的狀態只有啟用 sshd 服務的監控，所以設定好上面幾個簡單設定，就可以算是完成了基本的設定。其實在預設的設定檔中，還提供很多服務的預設設定，像是mysql, grafana, nginx-http-auth...。如果有需要可以再去開啟即可，因為大部分已經出現在設定檔案的服務的action, filter早就已經寫好放在 /etc/fail2ban/action.d/, /etc/fail2ban/filter.d/ 裡面。
+    
 
 
 ### **資料來源**  
