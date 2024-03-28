@@ -26,10 +26,10 @@
 - 接下來，為了省事在 window 用 linux 指令，去安裝 Git bash
     - Git bash簡介
         
-        Git Bash 是一個為 Windows 用戶提供的 Git 命令行界面的工具。它基於 Bash shell，使得在 Windows 系統上使用 Git 命令變得更加方便。以下是 Git Bash 的一些主要特點和功能：
+        Git Bash 是一個為 Windows 使用者提供的 Git 命令行界面的工具。它基於 Bash shell，使得在 Windows 系統上使用 Git 命令變得更加方便。以下是 Git Bash 的一些主要特點和功能：
         
-        1. **Bash Shell：** Git Bash 使用 Bash shell，這是一種類 Unix shell，為使用者提供了一個強大的命令行環境，讓用戶能夠通過命令行界面來執行 Git 命令和其他 Unix/Linux 命令。
-        2. **Git 命令行工具：** Git Bash 預先安裝了 Git 的命令行工具，這使得用戶可以直接在命令行中使用 Git 命令，如 **`git clone`**、**`git commit`**、**`git push`** 等。
+        1. **Bash Shell：** Git Bash 使用 Bash shell，這是一種類 Unix shell，為使用者提供了一個強大的命令行環境，讓使用者能夠通過命令行界面來執行 Git 命令和其他 Unix/Linux 命令。
+        2. **Git 命令行工具：** Git Bash 預先安裝了 Git 的命令行工具，這使得使用者可以直接在命令行中使用 Git 命令，如 **`git clone`**、**`git commit`**、**`git push`** 等。
         3. **Unix 工具：** 除了 Git 命令行工具外，Git Bash 還包含了一些常見的 Unix 工具，如 **`ls`**、**`cp`**、**`mv`**、**`rm`** 等，這使得在命令行中執行標準的 Unix 命令變得更加容易。
         4. **支援 SSH：** Git Bash 支援 SSH，這使得你可以使用 SSH 金鑰進行安全的 Git 操作，例如克隆或推送存儲庫。
         5. **環境變數：** Git Bash 允許你在 Bash shell 中設置環境變數，這有助於自定義你的開發環境。

@@ -47,7 +47,7 @@ Fail2ban 是一種用於防範惡意登入嘗試和拒絕服務攻擊的工具�
 3. 如果沒有啟用，就把它打開  
 
     enable 代表未來系統重啟的話，也會自動啟動服務。  
-    start 則是歷時手動啟動，不用等待系統重啟。
+    start 則是立即手動啟動，不用等待系統重啟。
 
     ``` bash
     sudo systemctl enable fail2ban
