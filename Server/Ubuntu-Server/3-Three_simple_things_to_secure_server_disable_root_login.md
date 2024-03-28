@@ -1,4 +1,4 @@
-# 自建網頁伺服器的簡易心得系列文(三) - 三個提升Server安全性的設定之禁止Root管理者以SSH登入篇
+# 自建網站伺服器的簡易心得系列文(三) - 三個提升Server安全性的設定之禁止Root管理者以SSH登入篇
 
 **前言**
 ===
@@ -86,7 +86,7 @@ su - <USER_NAME>
 1. **指令修改**  
 
     ``` bash
-    udo adduser <USER_NAME> sudo
+    sudo adduser <USER_NAME> sudo
     ```  
 2. **設定檔修改**  
 
