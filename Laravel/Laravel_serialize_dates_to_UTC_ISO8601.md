@@ -89,8 +89,7 @@ protected $casts = [
 
 ### **資料來源**  
 
-[toArray uses incorrect timezone. · Issue #31722 · laravel/framework](https://github.com/laravel/framework/issues/31722)  
-[toArray uses incorrect timezone. · Issue #31722 · laravel/framework](https://github.com/laravel/framework/issues/31722)  
+[toArray uses incorrect timezone. · Issue #31722 · laravel/framework](https://github.com/laravel/framework/issues/31722)
 
 ###### tags: `laravel` `datetime`
 
