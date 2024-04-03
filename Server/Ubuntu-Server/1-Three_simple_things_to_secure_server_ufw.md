@@ -107,8 +107,4 @@ Server Linux 版本: Ubuntu 22.04.3 LTS
 [Ubuntu Server 20.04.1 預設 UFW 防火牆 Firewall 設定規則詳解和教學](https://footmark.com.tw/news/linux/ubuntu/ubuntu-server-ufw/)  
 [Ubuntu 防火牆設定 - 使用 ufw 指令](https://blog.tarswork.com/post/ubuntu-firewall-setting-using-ufw/)  
 
-<!-- ### 二，安裝 Fail2ban，防止不明人士一直嘗試登入
-
-### 三，管理好使用者，避免最高使用者外洩 -->
-
 ###### tags: `server`
