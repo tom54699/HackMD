@@ -37,12 +37,20 @@ Docker Volume 是 Docker 中用於持久性數據存儲的機制之一。在 Doc
 
 2. **更改啟動 Docker Container 指令**  
 
-    需要加上 `-v mysql_data_volume:/var/lib/mysql`
+    需要加上 `-v Volume名稱:容器內部路徑`
 
     ``` bash
     docker run -d --name mysql-container -p 3307:3306 -v mysql_data_volume:/var/lib/mysql tom54699/mysql_practice:1.0
     ```  
-    這樣就算是成功囉，Docker Volume 的默認存儲位置是在主機的 `/var/lib/docker/volumes` 目錄下。
+    這樣就算是成功囉，Docker Volume 的默認存儲位置是在主機的 `/var/lib/docker/volumes` 目錄下。 
+
+2. **額外補充: 使用 Bind mount 來指定掛載資料夾** 
+
+    剛剛我們使用的是 volume，Docker 也提供我們用 Bind mount 來掛載，加上 `-v 本地路徑:容器內部路徑`。  
+
+    ``` bash
+   docker run -d --name mysql-container -p 3307:3306 -v /your/custom/directory:/var/lib/mysql tom54699/mysql_practice:1.0
+    ``` 
 
 
 
