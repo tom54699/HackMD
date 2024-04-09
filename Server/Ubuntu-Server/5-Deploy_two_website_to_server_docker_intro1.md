@@ -186,7 +186,7 @@ Dockerfile 是用來定義容器內部環境和設定檔。透過 Dockerfile，�
 這篇文章主要就介紹到這邊，下一篇預計會繼續介紹 Docker 相關的主題，會從今天建立好的 MySQL Container 在延伸一些 Docker 其他的概念。
 ::: 
 
-
+###### tags: `server` `docker`
 
 
 

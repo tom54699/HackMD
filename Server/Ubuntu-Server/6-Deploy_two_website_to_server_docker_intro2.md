@@ -3,7 +3,7 @@
 **前言**
 ===
 :::info
-再上一篇文章中，我們大致了解了 Docker，也成功建立了一個 MySQL 容器，大家應該對 `Dockerfile`、`container`、`image` 有一點概念了。如果還是不太懂，可以多多爬文，一開始接觸有個撞牆期很正常，建議實作可以比較快熟悉上手。 今天主要會簡單介紹 `Volume`，和一些平常基本會用到的 Docker 指令。
+再上一篇文章中，我們大致了解了 Docker，也成功建立了一個 MySQL 容器，大家應該對 `Dockerfile`、`container`、`image` 有一點概念了。如果還是不太懂，可以多多爬文，一開始接觸有個撞牆期很正常，建議實作可以比較快熟悉上手。 今天主要會簡單介紹 `Volume` 和簡單的實作。
 :::  
 
 :::warning
@@ -19,7 +19,9 @@ Docker Volume 是 Docker 中用於持久性數據存儲的機制之一。在 Doc
 
 這就是為什麼需要使用 Volume 的原因。通過建立 Volume，我們可以將容器內的數據持久化存儲在主機上，從而確保即使容器終止，數據仍然得以保留。此外，當容器內的數據發生更改時，Volume 會自動將這些變化同步到主機上。這意味著你不需要手動同步數據，Volume 會負責確保數據在容器和主機之間的同步性，從而實現數據的持久化和一致性。
 
-接下來，讓我們來實際進行操作，以確保持久化數據的安全性。  
+#### **Volume 實際操作** 
+
+今天會介紹 `Volume` 和 `Bind mount` 兩種方式來做到持久化，未來在操作 Docker Compose 會比較常用到的是 `Volume` 的做法。
 
 1. **建立一個 Docker Volume**  
 
@@ -32,6 +34,12 @@ Docker Volume 是 Docker 中用於持久性數據存儲的機制之一。在 Doc
     ``` bash
     docker volume ls
     ```  
+    查看特定 Volume 資訊  
+
+    ``` bash
+    docker inspect mysql_data_volume
+    ``` 
+
 
     ![Docker Volume command](https://i.imgur.com/D7tzEZp.png)  
 
@@ -44,13 +52,23 @@ Docker Volume 是 Docker 中用於持久性數據存儲的機制之一。在 Doc
     ```  
     這樣就算是成功囉，Docker Volume 的默認存儲位置是在主機的 `/var/lib/docker/volumes` 目錄下。 
 
-2. **額外補充: 使用 Bind mount 來指定掛載資料夾** 
+3. **使用 Bind mount 來指定掛載資料夾** 
 
-    剛剛我們使用的是 volume，Docker 也提供我們用 Bind mount 來掛載，加上 `-v 本地路徑:容器內部路徑`。  
+    除了剛剛使用的 volume，Docker 也提供我們用 Bind mount 來掛載，指令是 `-v 本地路徑:容器內部路徑`。  
 
     ``` bash
    docker run -d --name mysql-container -p 3307:3306 -v /your/custom/directory:/var/lib/mysql tom54699/mysql_practice:1.0
-    ``` 
+    ```  
+    確認是否掛載成功，可以查看 container 詳細資訊的 `Mounts` 部分：  
+
+    ``` bash
+    docker inspect mysql-container
+    ```  
+#### **額外補充 如何輸出 MySQL 容器內的 SQL 檔案** 
+
+:::success
+更多詳細的資訊，建議參考底下資料來源的官方文件。未來預計會在介紹 Docker Compose 後出一篇有關 volume 更深入的討論。
+:::
 
 
 
@@ -63,3 +81,12 @@ docker image rmi <IMAGE ID>
 ``` 
 IMAGE ID 可以不用全部打出來，Docker 會自動識別並刪除與所提供的部分 IMAGE ID 相符的映像。
     -->
+
+### **資料來源**  
+
+[Bind mounts | Docker Docs](https://docs.docker.com/storage/bind-mounts/)  
+[Volumes | Docker Docs](https://docs.docker.com/storage/volumes/)  
+[Docker volumes 教學 - 從不熟到略懂 - MyApollo](https://myapollo.com.tw/blog/docker-volumes/) 
+
+
+###### tags: `server` `root` `ssh`
