@@ -34,14 +34,14 @@ Docker Volume 是 Docker 中用於持久性數據存儲的機制之一。在 Doc
     ``` bash
     docker volume ls
     ```  
+
+    ![Docker Volume command](https://i.imgur.com/D7tzEZp.png)
+
     查看特定 Volume 資訊  
 
     ``` bash
     docker inspect mysql_data_volume
-    ``` 
-
-
-    ![Docker Volume command](https://i.imgur.com/D7tzEZp.png)  
+    ```   
 
 2. **更改啟動 Docker Container 指令**  
 
@@ -64,23 +64,22 @@ Docker Volume 是 Docker 中用於持久性數據存儲的機制之一。在 Doc
     ``` bash
     docker inspect mysql-container
     ```  
-#### **額外補充 如何輸出 MySQL 容器內的 SQL 檔案** 
+
+#### **額外補充：匯出 MySQL 容器內資料**  
+
+透過指令匯出 MySQL 容器中的 SQL 檔案。  
+
+```bash
+docker exec $container_name mysqldump -u$db_user -p$db_password your_database_name > /tmp/db_backup.sql
+```  
 
 :::success
-更多詳細的資訊，建議參考底下資料來源的官方文件。未來預計會在介紹 Docker Compose 後出一篇有關 volume 更深入的討論。
+更多詳細的資訊，建議參考底下資料來源的官方文件。未來預計會在介紹 Docker Compose 時會再度提到 `Volume` 的使用，後續也會再出一篇有關 volume 更深入的討論。
 :::
 
+### **延伸閱讀**  
 
-
-<!-- :::success
-額外補充： 可以根據 `IMAGE ID` 刪掉不需要的映像檔，尤其是如果當改了 Dockerfile 但 build 的時候，沒有更換映像檔案的 tag 話，就會發生 image 沒有更新的狀況。  
-:::  
-
-``` bash
-docker image rmi <IMAGE ID>
-``` 
-IMAGE ID 可以不用全部打出來，Docker 會自動識別並刪除與所提供的部分 IMAGE ID 相符的映像。
-    -->
+[使用 Rclone 將 Linux 伺服器中的 MySQL Docker 容器資料異地備份至 Google Drive]()  
 
 ### **資料來源**  
 
@@ -89,4 +88,4 @@ IMAGE ID 可以不用全部打出來，Docker 會自動識別並刪除與所提�
 [Docker volumes 教學 - 從不熟到略懂 - MyApollo](https://myapollo.com.tw/blog/docker-volumes/) 
 
 
-###### tags: `server` `root` `ssh`
+###### tags: `server` `docker` `volume`
