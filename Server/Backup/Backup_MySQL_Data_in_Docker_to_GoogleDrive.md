@@ -54,14 +54,14 @@ Server Linux 版本: Ubuntu 22.04.3 LTS
    ```  
 
    設定細項範例
-   - 階段一，新增空間和命名
+   - 階段一，新增連線和命名
             
       ```bash
       No remotes found - make a new one
       n) New remote
       s) Set configuration password
       q) Quit config
-      n/s/q> n (選 n 新增雲端空間)
+      n/s/q> n (選 n 新增連線)
       name> google_drive (命名 google_drive)
       ```
             
