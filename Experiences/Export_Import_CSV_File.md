@@ -18,10 +18,10 @@
 
 1. 要在匯出 CSV 檔案的 Header 加上 BOM（Byte Order Mark），這樣 Windows 上的 Excel 就能正確識別為 UTF-8 編碼。以下是簡單的範例：
 
-``` php  
-// output BOM
-fwrite($output, "\xEF\xBB\xBF");
-```  
+    ``` php  
+    // output BOM
+    fwrite($output, "\xEF\xBB\xBF");
+    ```  
 
 2. 如果無法修改匯出邏輯，在 Windows 打開記事本 另存檔案時選擇 `UTF-8 BOM`。
 
