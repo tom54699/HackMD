@@ -24,6 +24,12 @@
 
 *   `FLOAT` / `DOUBLE`：會在「存進去那一刻」就失真，肉眼可見尾數，絕對禁止用於金額儲存。
 
+    | 型別         | 位元寬度   | 標準名稱              | 近似有效位數       | 範例 (MySQL) |
+    | ---------- | ------ | ----------------- | ------------ | ---------- |
+    | **FLOAT**  | 32 bit | IEEE-754 binary32 | ≈ 7 位十進位     | `FLOAT`    |
+    | **DOUBLE** | 64 bit | IEEE-754 binary64 | ≈ 15-16 位十進位 | `DOUBLE`   |
+
+
 ## 3. 程式層：高精度計算原理
 
 從資料庫取出金額後，在程式中進行計算時，同樣需要全程避免使用語言內建的浮點數型別進行加減乘除運算。應使用專門的高精度數學庫或處理方式。這些高精度計算方式的底層原理，主要有兩種實現思路：
@@ -97,18 +103,12 @@ graph TD
 ## 參考資料
 
 *   [Decimal.js：JavaScript 中的高精度十進制運算庫 - Calpa 的煉金工房](https://calpa.me/blog/decimaljs-high-precision-decimal-calculations/)
-*   [高精度计算 - OI Wiki](https://oi-wiki.org/math/bignum/)
-*   [推荐几个JavaScript精度计算库，解决精度丢失原创 - CSDN博客](https://blog.csdn.net/bbsyi/article/details/103287274)
 *   [PHP浮點數精度問題 - 方格子](https://vocus.cc/article/64e6087dfd8978000128d8d4)
-*   [golang用于计算金钱计算类型，防止计算误差原创 - CSDN博客](https://blog.csdn.net/m0_69733784/article/details/132856953)
 *   [golang 金额高精度计算 - 稀土掘金](https://juejin.cn/post/7126800145525506085)
-*   [go金额计算方法decimal 使用方法原创 - CSDN博客](https://blog.csdn.net/kentrl/article/details/129915086)
-*   [JSON 长数字处理 - 虚幻](https://qwertyyb.github.io/2024/04/04/JSON%20%E9%95%BF%E6%95%B0%E5%AD%97%E5%88%84%E5%A4%84%E7%90%86/)
-*   [利用json-bigint处理大数字[溢出]问题 - 稀土掘金](https://juejin.cn/post/7002489417088630821)
 
 ---
 
-**作者**：Manus AI
-**日期**：2025年8月29日
+_此篇文章由AI輔助撰寫_  
+
 
 
