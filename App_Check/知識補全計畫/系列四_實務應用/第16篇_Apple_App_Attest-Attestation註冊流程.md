@@ -306,7 +306,7 @@ A: 不用！使用現成函式庫即可。但理解原理能幫你：
 
 ### 進階資源
 
-- [Apple App Attest 官方文件](https://developer.apple.com/documentation/devicecheck/validating_apps_that_connect_to_your_server)
+- [Apple App Attest 官方文件](https://developer.apple.com/documentation/devicecheck/validating-apps-that-connect-to-your-server)
 - [WebAuthn 規格](https://www.w3.org/TR/webauthn-2/) - App Attest 基於此標準
 - [CBOR 規格 RFC 8949](https://www.rfc-editor.org/rfc/rfc8949.html)
 - [X.509 規格 RFC 5280](https://www.rfc-editor.org/rfc/rfc5280.html)

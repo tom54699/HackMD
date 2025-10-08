@@ -1,4 +1,4 @@
-# 第 6 篇：理解 ECC 與 ECDSA - 為什麼 Apple 選擇這個技術？
+# 第 6 篇：理解 ECC 與 ECDSA
 
 ## 前言：當你第一次看到 Apple App Attest 時的困惑
 

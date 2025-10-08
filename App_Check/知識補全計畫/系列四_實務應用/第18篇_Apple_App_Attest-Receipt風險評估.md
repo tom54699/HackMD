@@ -298,6 +298,6 @@ A:
 
 ### 進階資源
 
-- [Apple App Attest Receipt 官方文件](https://developer.apple.com/documentation/devicecheck/assessing_fraud_risk)
+- [Apple App Attest Receipt 官方文件](https://developer.apple.com/documentation/devicecheck/assessing-fraud-risk)
 - [PKCS#7 規格 RFC 2315](https://www.rfc-editor.org/rfc/rfc2315.html)
 - [ASN.1 編碼規則](https://www.itu.int/rec/T-REC-X.690/)

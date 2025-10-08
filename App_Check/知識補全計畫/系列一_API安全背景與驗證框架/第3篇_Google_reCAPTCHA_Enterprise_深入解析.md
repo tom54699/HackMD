@@ -380,5 +380,5 @@ grecaptcha.enterprise.execute('SITE_KEY', {action: 'login'})
 
 - [reCAPTCHA Enterprise 官方文件](https://cloud.google.com/recaptcha-enterprise/docs)
 - [reCAPTCHA 最佳實務指南](https://cloud.google.com/recaptcha-enterprise/docs/best-practices)
-- [SMS Defense 文件](https://cloud.google.com/recaptcha-enterprise/docs/sms-toll-fraud-detection)
+- [SMS Defense 文件](https://cloud.google.com/identity-platform/docs/recaptcha-tfp)
 - [分數解讀指南](https://cloud.google.com/recaptcha-enterprise/docs/interpret-assessment)

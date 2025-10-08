@@ -606,7 +606,6 @@ App Attest 借鑑 WebAuthn:
 
 ## 參考資源
 
-- [Apple App Attest 官方文件](https://developer.apple.com/documentation/devicecheck/validating_apps_that_connect_to_your_server)
-- [App Attest 環境準備](https://developer.apple.com/documentation/devicecheck/preparing_to_use_the_app_attest_service)
+- [Apple App Attest 官方文件](https://developer.apple.com/documentation/devicecheck/validating-apps-that-connect-to-your-server)
 - [WebAuthn 規範](https://www.w3.org/TR/webauthn-2/)
 - [Apple Platform Security Guide](https://help.apple.com/pdf/security/en_US/apple-platform-security-guide.pdf)

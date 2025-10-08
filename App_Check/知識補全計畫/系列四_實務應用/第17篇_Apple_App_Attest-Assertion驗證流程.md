@@ -281,7 +281,7 @@ A:
 
 ### 進階資源
 
-- [Apple App Attest - Assertion 官方文件](https://developer.apple.com/documentation/devicecheck/validating_apps_that_connect_to_your_server#3576643)
+- [Apple App Attest - Assertion 官方文件](https://developer.apple.com/documentation/devicecheck/validating-apps-that-connect-to-your-server)
 - [ECDSA 簽章演算法](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm)
 - [防重放攻擊設計模式](https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html)
 
