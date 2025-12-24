@@ -1,4 +1,4 @@
-# MySQL Collation 陷阱：如何避免 Email 登入與忘記密碼的安全風險
+# MySQL Collation 陷阱：Email 大小寫、重音與忘記密碼的安全坑
 
 > 本文靈感源自這篇研究：https://blog.voorivex.team/puny-code-0-click-account-takeover  
 > 該文討論 Punycode/IDN 與字串正規化不一致如何造成 0-click Account Takeover。  
@@ -54,15 +54,15 @@ MODIFY email VARCHAR(320) COLLATE utf8mb4_bin;
 ### 場景 1：同一個人註冊了兩次
 
 ```
-星期一：用戶用 user@example.com 註冊 → 成功，DB 存入 user@example.com
-星期三：同一個人忘記了，用 User@Example.COM 再註冊一次
+星期一:用戶用 john.doe@gmail.com 註冊 → 成功,DB 存入 john.doe@gmail.com
+星期三:同一個人用 John.Doe@Gmail.com 再註冊一次
 
-如果你的系統：
-- 應用層沒做檢查，直接 INSERT
-- email 欄位用 utf8mb4_bin（分大小寫）
+如果你的系統:
+- 應用層沒做檢查,直接 INSERT
+- email 欄位用 utf8mb4_bin(區分大小寫)
 - 沒有 UNIQUE 約束
 
-→ 結果：同一個信箱變成兩個帳號
+→ 結果:同一個 Gmail 信箱變成兩個帳號(Gmail 不分大小寫,但你的 DB 分了)
 ```
 
 ### 場景 2：忘記密碼寄到攻擊者信箱
@@ -295,22 +295,6 @@ LIMIT 2
 - Email 驗證
 - 邀請
 - 後台查詢
-
----
-
-## 檢查現有資料庫設定
-
-```sql
--- 檢查表的 collation
-SHOW FULL COLUMNS FROM users;
-
--- 檢查資料庫預設
-SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME
-FROM information_schema.SCHEMATA
-WHERE SCHEMA_NAME = DATABASE();
-```
-
-如果看到 `utf8mb4_0900_ai_ci` 或類似的 `*_ci`，就要小心。
 
 ---
 
